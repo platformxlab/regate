@@ -1,0 +1,6 @@
+{
+    "env_vars": {
+        "PYTHONPATH": "regate",
+        "RESULTS_DIR": "regate/trace_util/llm_ops_generator/results/"
+    }
+}
