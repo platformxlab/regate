@@ -148,7 +148,11 @@ See `trace_util/llm_ops_generator/run_scripts/energy_operator_analysis_main.py` 
 For carbon emission analysis, see `trace_util/llm_ops_generator/run_scripts/carbon_analysis_main.py` for more details on how to launch the carbon emission analysis with different parameters, including carbon intensity, NPU duty cycle (utilization), and device lifetime.
 
 ### Running a Single Tensor Operator
-Please see `trace_util/llm_ops_generator/run_scripts/run_single_op_main.py` for an example of how to run a single tensor operator simulation.
+Please see `trace_util/llm_ops_generator/run_scripts/run_single_op_main.py` for an example of how to run a single tensor operator simulation. This tool could be helpful for analyzing a specific operator of interest rather than simulating the entire DNN model.
+
+### Running a Single Experiment
+To run a single experiment, you can directly use the provided ops generator classes.
+See the [README](trace_util/llm_ops_generator/README.md) under the `llm_ops_generator` directory.
 
 ### Adding New DNN Models
 We currently support LLMs (see `trace_util/llm_ops_generator/llm_ops_generator.py`), DLRM (see `trace_util/llm_ops_generator/dlrm_ops_generator.py`), DiT-XL (see `trace_util/llm_ops_generator/dit_ops_generator.py`), and GLIGEN (see `trace_util/llm_ops_generator/gligen_ops_generator.py`). Variants of these models (such as changing the number of layers or hidden dimensions) can be created by adding new configuration files in the `trace_util/llm_ops_generator/configs/models` directory. To add support for new model architectures, the user needs to implement a new model generator class in the `trace_util/llm_ops_generator` directory to reflect the model's dataflow graph. Many commonly used operators such as GEMM, Conv, and LayerNorm are implemented in `trace_util/npusim_backend/npusim_lib.py`. Please refer to the existing model generator classes for examples on how to call these operators and implement new model generators.
