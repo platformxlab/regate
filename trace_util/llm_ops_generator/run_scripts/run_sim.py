@@ -1,4 +1,6 @@
-### Generate LLM training traces on different TPU platforms for NPU reuse analysis.
+### Launch NPU simulations on the given NPU config and DNN models.
+### This script will sweep through all combinations of parallelisms, number of chips,
+### and batch sizes for the given models and NPU versions.
 ### Run "python run_sim.py --help" for more information on how to use this script.
 
 import csv
