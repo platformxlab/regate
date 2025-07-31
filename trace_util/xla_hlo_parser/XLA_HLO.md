@@ -2,31 +2,27 @@
 
 aXelerated Linear Algebra High-Level Operators Intermediate Representation
 
+This module contains a tiny ad-hoc parser for XLA HLO IR, which is used to represent the computation graph of a DNN model. The module also provides a tiny AST representation of the HLO graph with some useful functionalities to analyze the graph, such as analyzing the GEMM dimensions of an einsum expression.
+This module is still under development, so currently we have to manually convert an HLO graph to an ops generator class in our simulator. The ultimate goal is to automatically generate the ops generator class from the HLO graph.
+
 ## List of Resources
 - [XLA Operation Semantics in Compiler](https://www.tensorflow.org/xla/operation_semantics)
 - [XLA-Report](https://github.com/TensorflowXLABeginner/XLA-Report)
 - [Chromium Trace Event Format](https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit)
 
-## XLA HLO IR Module Source Codes
-https://drive.google.com/file/d/1yXoGoOje2_WbrdB60ynLV4yJDIy_taLI/view?usp=sharing
-
-## TODO
-- List of XLA instructions that should be supported by NPU
-- How to generate XLA traces from current benchmarks in Tensorflow
-    - How to parse TensorBoard trace files (`*.trace` or `*.tracetable`)
-- How to support XLA instructions in the simulator
-    - As a reference, how does TPU compiler/hardware handle XLA operations?
-
 ## Useful Notes
+
+### How to Dump HLO Module from a Tensorflow Program
 - `with tf.device("/TPU:0"):` runs the code on the specified TPU core 0
 - `@tf.function(jit_compile=True)` enables XLA JIT compilation
 - `func.experimental_get_compiler_ir(a, b)(stage="optimized_hlo")` returns a string that represents the XLA code for `func` taking parameters of type `a` and `b`
 - For Keras models, use:
 
         XLA_FLAGS="--xla_dump_to=./xla/xla_hlo" TF_XLA_FLAGS="--tf_xla_auto_jit=2" python [...]
-- `tensorflow/core/tpu/tpu_ops_c_api.h` contains C APIs for Tensorflow TPU
-- `hlo_instruction.h`: [HLO instruction definitions in compiler source code](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/xla/service/hlo_instruction.h)
-- `hlo_opcode.h`: [List of all HLO opcodes](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/compiler/xla/service/hlo_opcode.h)
+- `tensorflow/core/tpu/` contains C APIs for Tensorflow TPU
+
+### TPU GEMM Tiling Strategy
+- See [Jax Pallas documentation](https://docs.jax.dev/en/latest/pallas/tpu/matmul.html)
 
 ## XLA HLO IR Language Semantics
 
