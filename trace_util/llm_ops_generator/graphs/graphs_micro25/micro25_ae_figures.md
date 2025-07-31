@@ -1,6 +1,6 @@
 # List of Figures to be Reproduced
 
-This document lists the figures that need to be reproduced for the MICRO'25 artifact evaluation, along with their corresponding file names. Please find these figures under `trace_util/llm_ops_generator/graphs/graphs_micro25/outputs/`.
+This document lists the figures that need to be reproduced for the MICRO'25 artifact evaluation, along with their corresponding file names. After executing `make` under this directory, please find the generated figures under `trace_util/llm_ops_generator/graphs/graphs_micro25/outputs/`.
 To verify the results, one can compare the generated figures directly with those in the paper.
 
 
