@@ -1,4 +1,4 @@
-### Helper functions for modeling power, energy, and carbon emissions of NPUs
+### Helper functions for calculating power, energy, and carbon emissions
 
 
 def get_operational_energy_consumption_kWh(

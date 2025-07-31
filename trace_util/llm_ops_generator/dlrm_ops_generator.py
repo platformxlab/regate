@@ -1,3 +1,6 @@
+### DLRM operator generator.
+### Represents the dataflow graph of the DLRM recommendation model,
+
 import csv
 import json
 import os

@@ -1,3 +1,6 @@
+### LLM training and inference operator generators.
+### Represents the dataflow graph of LLMs.
+
 from abc import abstractmethod
 from copy import deepcopy
 import csv

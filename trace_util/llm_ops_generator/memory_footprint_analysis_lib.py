@@ -1,3 +1,5 @@
+### This file contains functions to calculate memory requirements for various models.
+
 import json
 from math import ceil
 from typing import Any

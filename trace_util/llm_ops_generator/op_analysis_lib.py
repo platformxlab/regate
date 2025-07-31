@@ -1,3 +1,7 @@
+### Helper functions for triggering the performance simulation of operators.
+### fill_operators_execution_info() can be called on a list of Operator objects
+### to simulate their execution times.
+
 from copy import deepcopy
 from typing import Any
 
@@ -5,7 +9,6 @@ from absl import flags, logging
 import numpy as np
 
 from trace_util.llm_ops_generator.Operator import Operator, OpType
-# from trace_util.llm_ops_generator.llm_ops_lib import fill_additional_fields
 from trace_util.npusim_backend import npusim_lib
 from trace_util.npusim_backend import util as npusim_util
 from trace_util.llm_ops_generator.configs.chips.ChipConfig import ChipConfig

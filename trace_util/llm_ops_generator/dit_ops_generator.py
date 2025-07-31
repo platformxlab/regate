@@ -1,3 +1,7 @@
+### DiT operator generator.
+### Since the DNN graph of DiT is similar to the prefill pass of LLMs,
+### this module wraps the LLMOpsGenerator to generate DiT ops.
+
 from copy import deepcopy
 import csv
 from functools import lru_cache

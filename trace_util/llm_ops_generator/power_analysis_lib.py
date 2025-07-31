@@ -1,3 +1,9 @@
+### Backend for the power simulation. The entry function is analyze_operator_energy(),
+### which can be called on each tensor operator to update its static and dynamic
+### energy consumption stats as well as the execution time impact.
+### The function get_power_gating_config() contains several pre-defined power-gating
+### configurations, which can be used to analyze the power gating impact on the operator.
+
 from copy import deepcopy
 from enum import Enum
 from math import ceil

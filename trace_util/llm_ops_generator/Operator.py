@@ -2,6 +2,8 @@
 ###     Represents a single operator (e.g., Softmax, MatMul).
 ###     Contains fields for operator semantics (e.g., input/output shapes, operator type),
 ###     as well as fields for simulation results (e.g., execution time, memory traffic).
+### In addition, this module contains utility functions for serializing and deserializing
+### operators to/from python dictionaries, which can be used for dumping to CSV files.
 
 
 from typing import Any, Sequence

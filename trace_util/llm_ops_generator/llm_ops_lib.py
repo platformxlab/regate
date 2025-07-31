@@ -1,3 +1,10 @@
+### This file defines functions to create various operators,
+### such as Conv2D, Einsum, elementwise operations, and collectives.
+### It also includes functions to create common DNN layers,
+### such as FFN and attention.
+### This library module is used by the ops generators to instantiate
+### the operators in the DNN graph.
+
 from math import floor, ceil
 import re
 from typing import Any, Sequence

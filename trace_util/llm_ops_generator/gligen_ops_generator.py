@@ -1,3 +1,14 @@
+### GLIGEN operator generator.
+### Represent the dataflow graph of the GLIGEN model,
+### which is a UNet-based stable diffusion model.
+### The organization of the GLIGENOpsGenerator class is intentionally
+### similar to the original pytorch implementation of GLIGEN:
+### We first define each block of the model (e.g., Downsample, Upsample,
+### ResnetBlock, etc.). Then, in the generate_UNet_ops() function,
+### we use these blocks to construct the DNN graph of the model.
+### Finally, the second half of the generate_UNet_ops() acts as the
+### forward() function and instantiates the operators for the simulation.
+
 import csv
 from math import floor, ceil
 import os
